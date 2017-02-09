@@ -41,8 +41,17 @@ public class Main {
                 System.out.println("Please input the second key...");
                 Scanner scan1 = new Scanner(System.in);
                 //input the second key
-                String key2 = scan1.nextLine();
-                System.out.println(cipher1.SubstitutionEncrypt(cipher0.ColumnEncrypt(plainText, key), key2));
+                String keySub = scan1.nextLine();
+                System.out.println(cipher1.SubstitutionEncrypt(cipher0.ColumnEncrypt(plainText, key), keySub));
+                break;
+            case "Substitution Cipher+Column Cipher":
+                //Encrypt the plaintext using Substitution encryption first then Column encryption
+                System.out.println("After using Substitution cipher and Column encryption, the Cipher is...");
+                System.out.println("Please input the second key...");
+                Scanner scan2 = new Scanner(System.in);
+                //input the second key
+                String keyCol = scan2.nextLine();
+                System.out.println(cipher0.ColumnEncrypt(cipher1.SubstitutionEncrypt(plainText, key), keyCol));
                 break;
             default:
                 System.out.println("Your encryption type is wrong, the plaintext is not encrypted...");
